@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="profile.html">Profile</a>
+        <a href="service_providers.html">Service Providers</a>
+        <a href="help_support.html">Help and Support</a>
+        <a href="payment.html">Payment</a>
+    </div>
+    <div class="s-container">
+        <div class="profile-header">
+            <h1 class="form-title">User Profile</h1>
+        </div>
+        <form id="profileForm">
+            <div class="form-group">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+            </div>
+            <div class="form-group">
+                <label for="mobileNumber">Mobile Number:</label>
+                <input type="tel" id="mobileNumber" name="mobileNumber" required>
+            </div>
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="text" id="age" name="age" required>
+            </div>
+            <div class="form-buttons">
+                <button id="mybut" type="submit" class="form-button">Save</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        async function saveProfile(event) {
+            event.preventDefault(); // Prevent default form submission
+            const profileData = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                mobileNumber: document.getElementById('mobileNumber').value,
+                age: document.getElementById('age').value
+            };
+
+            const response = await fetch('http://localhost:5500/profile', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(profileData)
+            });
+
+            const result = await response.json();
+            alert('Profile saved');
+            alert(result.message);
+        }
+
+        document.getElementById('profileForm').addEventListener('submit', saveProfile);
+    </script>
+</body>
+</html>

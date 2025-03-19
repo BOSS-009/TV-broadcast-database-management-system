@@ -1,0 +1,358 @@
+body {
+    background-color: #0d0d0d;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #1a1a1a;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    transition: all 0.3s ease;
+}
+.s-container {
+    background-color: #1a1a1a;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    transition: all 0.3s ease;
+    width: 1450px;
+    margin: auto;
+}
+.p-container {
+    background-color: #1a1a1a;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    transition: all 0.3s ease;
+    width: 220px;
+    margin: auto;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-title {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #00ffff;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    color: #00ffff;
+}
+
+.form-group input {
+    padding: 10px;
+    display: flex;    
+    border: none;
+    border-radius: 5px;
+    background-color: #333333;
+    color: #ffffff;
+    font-size: 1em;
+}
+
+.form-button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #00ffff;
+    color: #0d0d0d;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.c-form-button {
+    padding: 10px;
+    border: none;
+    display: flex;
+    flex-direction: row;
+    border-radius: 5px;
+    background-color: #00ffff;
+    color: #0d0d0d;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.form-button:hover {
+    background-color: #00b3b3;
+}
+
+.form-text {
+    text-align: center;
+    color: #00ffff;
+}
+
+.form-text a {
+    color: #00ffff;
+    text-decoration: none;
+}
+
+.form-text a:hover {
+    text-decoration: underline;
+}
+.container.fade-out {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.3s ease;
+}
+/* Add these styles to your existing styles.css */
+
+.service-provider {
+    display: flex;
+    align-items: center;
+    background-color: #1a1a1a;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.provider-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.provider-info h2 {
+    margin: 0;
+    color: #00ffff;
+}
+
+.provider-info p {
+    color: #ffffff;
+    margin: 5px 0;
+}
+
+.form-button {
+    margin-top: 10px;
+}
+/* Add these styles to your existing styles.css */
+
+/* Adjust container size for horizontal layout */
+.service-provider {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ensure items are spaced out horizontally */
+    background-color: #1a1a1a;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.provider-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.provider-info {
+    flex-grow: 1;  /* Ensure provider info takes up available space */
+    margin-left: 20px;
+}
+
+.provider-info h2 {
+    margin: 0;
+    color: #00ffff;
+}
+
+.provider-info p {
+    color: #ffffff;
+    margin: 5px 0;
+}
+
+.form-button {
+    margin-top: 10px;
+    display: flex;
+}
+
+.discount-price {
+    color: #ff6347;  /* Highlight the discount price */
+    text-decoration: line-through;
+}
+.search-bar {
+    width: 1425px;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid #00ffff;
+    background-color: #2a2a2a;
+    color: #00ffff;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    font-size: 16px;
+    transition: box-shadow 0.3s ease;
+}
+
+.search-bar:focus {
+    outline: none;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+}
+
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 17px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar a:hover {
+    background-color: #575757;
+    color: #ffffff;
+}
+
+/* Container adjustment to account for fixed navbar */
+.container, .s-container {
+    margin-top: 60px; /* Adjust to ensure content is below navbar */
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="tel"],
+.form-group input[type="email"],
+.form-group input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-group input[type="file"] {
+    padding: 3px;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+.form-title {
+    color: #fff;
+}
+
+.form-group label {
+    color: #ccc;
+}
+
+.form-group input {
+    background-color: #333;
+    color: #fff;
+    border: none;
+}
+
+.form-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-button:hover {
+    background-color: #0056b3;
+}
+
+.success-message {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* When the 'show' class is added, trigger the animation */
+.success-message.show {
+    opacity: 1;
+    transform: translateY(0);
+    animation: slideIn 1s ease-out forwards, fadeIn 1s ease-out forwards;
+}
+
+/* Keyframe for sliding in */
+@keyframes slideIn {
+    0% {
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Keyframe for fading in */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Additional styling for success message */
+.success-message {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #1a1a1a;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    color: #652cf5;
+    margin-top: 30px;
+}
+
+.success-message h1, .success-message p {
+    color: #652cf5; /* Neon blue color */
+    text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 10px #00ffff, 0 0 15px #00ffff, 0 0 25px #00ffff, 0 0 20px #00ffff, 0 0 25px #00ffff;
+}
+
+.success-message h1 {
+    margin: 0 0 10px 0;
+    font-size: 2.5em;
+}
+
+.success-message p {
+    font-size: 1.2em;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Providers</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="profile.html">Profile</a>
+        <a href="service_providers.html">Service Providers</a>
+        <a href="help_support.html">Help and Support</a>
+        <a href="payment.html">Payment</a>
+    </div>
+    <div class="s-container">
+        <h1 class="form-title">Service Providers</h1>
+        <input type="text" class="search-bar" id="searchBar" placeholder="Search providers..." onkeyup="searchProviders()">
+        <div id="serviceProvidersContainer">
+            <div class="service-provider">
+                <img src="/src/tatasky.jpeg" alt="Provider 1" class="provider-image">
+                <div class="provider-info" onclick="location.href='provider1.html'">
+                    <h2>TATA SKY</h2>
+                    <p>Provider ID: 101</p>
+                    <P>Number of channels: 03</P>
+                    <p>Original Price: <span class="discount-price">$60</span></p>
+                    <p>Discounted Price: $50</p>
+                </div>
+                <button class="form-button" onclick="subscribe('TATA SKY', 50)">Subscribe</button>
+            </div>
+            <div class="service-provider">
+                <img src="/src/dth.png" alt="Provider 2" class="provider-image">
+                <div class="provider-info" onclick="location.href='provider2.html'">
+                    <h2>DTH</h2>
+                    <p>Provider ID: 102</p>
+                    <P>Number of channels: 03</P>
+                    <p>Original Price: <span class="discount-price">$90</span></p>
+                    <p>Discounted Price: $75</p>
+                </div>
+                <button class="form-button" onclick="subscribe('DTH', 75)">Subscribe</button>
+            </div>
+            <div class="service-provider">
+                <img src="/src/airtel.jpeg" alt="Provider 3" class="provider-image">
+                <div class="provider-info" onclick="location.href='provider3.html'">
+                    <h2>AIRTEL</h2>
+                    <p>Provider ID: 103</p>
+                    <P>Number of channels: 03</P>
+                    <p>Original Price: <span class="discount-price">$120</span></p>
+                    <p>Discounted Price: $100</p>
+                </div>
+                <button class="form-button" onclick="subscribe('AIRTEL', 100)">Subscribe</button>
+            </div>
+        </div>
+        <button class="form-button" onclick="location.href='help_support.html'">Help and Support</button>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

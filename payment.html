@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="profile.html">Profile</a>
+        <a href="service_providers.html">Service Providers</a>
+        <a href="help_support.html">Help and Support</a>
+        <a href="payment.html">Payment</a>
+    </div>
+    <div class="container">
+        <form id="paymentForm" class="form">
+            <h1 class="form-title">Payment</h1>
+            <div class="form-group">
+                <label for="payment-id">Payment ID</label>
+                <input type="text" id="payment-id" name="payment-id" required>
+            </div>
+            <div class="form-group">
+                <label for="payment-date">Payment Date</label>
+                <input type="date" id="payment-date" name="payment-date" required>
+            </div>
+            <div class="form-group">
+                <label for="provider-name">Provider Name</label>
+                <input type="text" id="provider-name" name="provider-name" required>
+            </div>
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input type="number" id="price" name="price" required>
+            </div>
+            <button type="submit" class="form-button">Pay Now</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('paymentForm').addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const paymentData = {
+                paymentId: document.getElementById('payment-id').value,
+                paymentDate: document.getElementById('payment-date').value,
+                providerName: document.getElementById('provider-name').value,
+                price: document.getElementById('price').value
+            };
+    
+            try {
+                const response = await fetch('http://localhost:5500/payment', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(paymentData)
+                });
+    
+                const contentType = response.headers.get('content-type');
+                if (contentType && contentType.indexOf('application/json') !== -1) {
+                    const result = await response.json();
+                    if (result.success) {
+                        window.location.href = 'success.html';
+                    } else {
+                        alert('Payment failed: ' + result.message);
+                    }
+                } else {
+                    // Handle the case where the response is not JSON
+                    const text = await response.text();
+                    console.error('Unexpected response:', text);
+                    alert('Payment failed: Unexpected response format. Check console for details.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Payment failed: ' + error.message);
+            }
+        });
+    </script>
+    
+</body>
+</html>

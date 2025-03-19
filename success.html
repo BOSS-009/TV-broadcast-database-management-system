@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Success</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="profile.html">Profile</a>
+        <a href="service_providers.html">Service Providers</a>
+        <a href="help_support.html">Help and Support</a>
+        <a href="payment.html">Payment</a>
+    </div>
+    <div class="container">
+        <div class="success-message">
+            <h1>Payment Successful!</h1>
+            <p>Thank you for your payment.</p>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const successMessage = document.querySelector('.success-message');
+            successMessage.classList.add('show');
+        });
+    </script>
+</body>
+</html>
